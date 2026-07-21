@@ -11,14 +11,61 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var notes = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack{
+            HStack{
+                Spacer()
+                Button{
+                    print("Goodbye world")
+                } label: {
+                    Image(systemName: "trash")
+                        .glassEffect()
+                        //.fixedSize(horizontal: 15, vertical: 15)
+                }
+                Spacer()
+                Text("Note taker")
+                    .font(.largeTitle)
+                    .bold()
+                    .italic()
+                    .padding()
+                Spacer()
+                Button{
+                    print("Hello world")
+                } label: {
+                    Image(systemName: "plus")
+                        .glassEffect()
+                        //.fixedSize(horizontal: 15, vertical: 15)
+                }
+                Spacer()
+            }
+            //TOP AND TITLE HERE
         }
-        .padding()
+        
+        VStack{
+            TextEditor(text: $notes)
+                .scrollContentBackground(.hidden)
+                .frame(height: 550)
+                .background(.gray)
+                //.glassEffect(.clear)
+                .cornerRadius(30)
+                .padding()
+            Spacer()
+            //TEXT BOX
+        }
+        
+        VStack{
+            Text("Recents")
+            Spacer()
+            Image(.placeholder)
+                .resizable()
+                //.scaledToFit()
+                .frame(width: 350, height:100)
+            //BOTTOM BAR RECENT NOTES
+        }
+
     }
 }
 
