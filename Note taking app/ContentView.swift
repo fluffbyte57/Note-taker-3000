@@ -6,7 +6,7 @@
 //  ooooo cool project awesome sauce
 
 
-// i have no idea how to commit properly...
+// Nevermind now i know how to commit, i'm a genius
 
 import SwiftUI
 
@@ -37,7 +37,7 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "plus")
                         .glassEffect()
-                        //.fixedSize(horizontal: 15, vertical: 15)
+                        //.frame(width:19, height:30)
                 }
                 Spacer()
             }
