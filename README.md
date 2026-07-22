@@ -3,8 +3,8 @@
 **The classic note taking project i saw many beginners do **and so thought to myself "hey, I'm a beginner", so i decided to make this:)
 
 #### Feature ideas for later:
-- Dark / Light mode switcher
-- Actually working note saving
+- ~~Dark / Light mode switcher~~
+- ~~~~Actually working note saving
 - New note making
 - Delete current notes
 - Change font and allat
