@@ -29,7 +29,9 @@ struct ContentView: View {
                         .frame(width: 100 , height: 50)
                     HStack(spacing: 10){
                         Button{
-                            print("Goodbye world")
+                            print("Deleted the current note")
+                            notes = ""
+                                  // along with deleting current "note" and text in it, also show a text label as saying "no notes currently selected" and have it always be visible unless the TextEditor is overlaying it
                         } label: {
                             Image(systemName: "trash")
                                 .glassEffect()
@@ -41,7 +43,7 @@ struct ContentView: View {
                             //print(darkMode)
                             //dark | light mode switcher!!
                         } label: {
-                            Image(systemName: "moon")
+                            Image(systemName: darkMode ? "sun.max.fill" : "moon")
                                 .glassEffect()
                                 .font(.system(size: 35))
                         }
@@ -60,14 +62,16 @@ struct ContentView: View {
                         .frame(width: 100 , height: 50)
                     HStack(spacing: 10){
                         Button{
-                            print("Goodbye world")
+                            print("Placeholder")
                         } label: {
                             Image(systemName: "a")
                                 .glassEffect()
                                 .font(.system(size: 40))
                         }
                         Button{
-                            print("uh world? world")
+                            print("Cleared current text AND created a new note")
+                            notes = ""
+                            //temporarily just "clear" the current notes so that the user can write new notes
                         } label: {
                             Image(systemName: "plus")
                                 .glassEffect()

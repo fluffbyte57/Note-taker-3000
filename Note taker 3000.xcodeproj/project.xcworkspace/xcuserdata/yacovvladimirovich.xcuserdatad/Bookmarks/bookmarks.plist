@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>71</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>70</string>
+					<key>Timestamp</key>
+					<string>806401566.790192</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Note taking app/ContentView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                        Button{
+</string>
+				<key>leading</key>
+				<string>                                .font(.system(size: 40))
+                        }
+</string>
+				<key>trailing</key>
+				<string>                            print("Cleared current text AND created a new note")
+                            notes = ""
+                            //temporarily just "clear" the current notes so that the user can write new notes
+</string>
+			</dict>
+			<key>title</key>
+			<string>New note Button</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>64</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>63</string>
+					<key>Timestamp</key>
+					<string>806401566.790361</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Note taking app/ContentView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                        Button{
+</string>
+				<key>leading</key>
+				<string>                        .frame(width: 100 , height: 50)
+                    HStack(spacing: 10){
+</string>
+				<key>trailing</key>
+				<string>                            print("Placeholder")
+                        } label: {
+                            Image(systemName: "a")
+</string>
+			</dict>
+			<key>title</key>
+			<string>[PLACEHOLDER] button</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>40</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>39</string>
+					<key>Timestamp</key>
+					<string>806401566.790354</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Note taking app/ContentView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                        Button{
+</string>
+				<key>leading</key>
+				<string>                                .font(.system(size: 30))
+                        }
+</string>
+				<key>trailing</key>
+				<string>                            print("darkmode state: ", darkMode)
+                            darkMode.toggle()
+                            //print(darkMode)
+</string>
+			</dict>
+			<key>title</key>
+			<string>Dark / Light mode switcher</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>31</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>30</string>
+					<key>Timestamp</key>
+					<string>806401238.16123</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Note taking app/ContentView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                        Button{
+</string>
+				<key>leading</key>
+				<string>                        .frame(width: 100 , height: 50)
+                    HStack(spacing: 10){
+</string>
+				<key>trailing</key>
+				<string>                            print("Deleted the current note")
+                            notes = ""
+                                  // along with deleting current "note" and text in it, also show a text label as saying "no notes currently selected" and have it always be visible unless the TextEditor is overlaying it
+</string>
+			</dict>
+			<key>title</key>
+			<string>Delete notes button</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>
