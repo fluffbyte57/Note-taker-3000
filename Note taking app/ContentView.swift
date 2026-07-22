@@ -134,6 +134,12 @@ struct ContentView: View {
                     } label: {
                         Text(notes[1])
                     }
+                    Button{
+                        currentnote = notes[2]
+                        //testButton to load in eg note[2] or whichever chosen IN CODE not current interchangeable...
+                    } label: {
+                        Text(notes[2])
+                    }
                 }
                 //Button(notes[2])
             }
