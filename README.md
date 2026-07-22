@@ -4,11 +4,14 @@
 
 #### Feature ideas for later:
 - ~~Dark / Light mode switcher~~
-- ~~~~Actually working note saving
-- New note making
-- Delete current notes
-- Change font and allat
+- ~~~~~~Actually working note saving~~
+- ~~New note making~~
+- ~~Delete current notes~~
+- Be able to rename old notes
+- Share notes
+- Make the system all together LESS confusing...
+- ~~~~Change font and allat
 
-Anyways, wish me luck on my journey of learning this lamnguage which some call "*Swift*"
+Anyways, wish me luck on my journey of learning this language which some call "*Swift*"
 
 <img width="1170" height="1506" alt="0iqk8cd2yh9e1" src="https://github.com/user-attachments/assets/30d4405d-a8c3-4684-bb0e-880e50aebe70" />

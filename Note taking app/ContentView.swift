@@ -13,6 +13,7 @@ import SwiftUI
 struct ContentView: View {
 
     @AppStorage("currentnote") private var currentnote = ""
+    @AppStorage("savedNotes") private var savedNotesData: Data = Data()
     @State private var notes: [String]  = [
         "First note",
         "Second note",
@@ -20,7 +21,26 @@ struct ContentView: View {
     ]
     
     //.preferredColorScheme(darkMode? .dark : .light)
-    @State private var darkMode = false
+    @AppStorage("darkMode") private var darkMode = false
+    
+    
+    //////oooooo mysterious data saver AND loader //////
+    
+    func saveNotes() {
+        if let data = try? JSONEncoder().encode(notes) {
+            savedNotesData = data
+        }
+    }
+    
+    func loadNotes() {
+        if let loadedNotes = try? JSONDecoder().decode(
+            [String].self,
+            from: savedNotesData
+        ) {
+            notes = loadedNotes
+        }
+    }
+    ////////////////////////////////////////////////////
     
     var body: some View {
         //.preferredColorScheme(darkMode ? .dark : .light)
@@ -36,6 +56,15 @@ struct ContentView: View {
                     HStack(spacing: 10){
                         Button{
                             print("Deleted the current note")
+                            
+                            if let index = notes.firstIndex(of: currentnote) {
+                                notes.remove(at: index)
+                                saveNotes()
+                                currentnote = ""
+                                //finds the CURRENT NOTE and DELETES IT
+                            }
+                            
+                            saveNotes()
                             currentnote = ""
                                   // along with deleting current "note" and text in it, also show a text label as saying "no notes currently selected" and have it always be visible unless the TextEditor is overlaying it
                         } label: {
@@ -46,7 +75,6 @@ struct ContentView: View {
                         Button{
                             print("darkmode state: ", darkMode)
                             darkMode.toggle()
-                            //print(darkMode)
                             //dark | light mode switcher!!
                         } label: {
                             Image(systemName: darkMode ? "sun.max.fill" : "moon")
@@ -70,22 +98,17 @@ struct ContentView: View {
                         .frame(width: 100 , height: 50)
                     HStack(spacing: 10){
                         Button{
-                            //print("Placeholder")
-                            print(notes)
-                            currentnote = notes[0]
+                            print("sharing note")
+                            //ILL MAKE THIS THE SHARING BUTTON
                         } label: {
-                            Image(systemName: "a")
+                            Image(systemName: "paperplane")
                                 .glassEffect()
-                                .font(.system(size: 40))
+                                .font(.system(size: 35))
                         }
                         Button{
-                            //print("Cleared current text AND created a new note")
-                            print(currentnote, " is the current saved note")
                             notes.append(currentnote)
-                            print(notes , " are all the notes saved")
-                            //print(notes)
+                            saveNotes()
                             currentnote = ""
-                            //temporarily just "clear" the current notes so that the user can write new notes
                         } label: {
                             Image(systemName: "plus")
                                 .glassEffect()
@@ -103,7 +126,7 @@ struct ContentView: View {
             TextEditor(text: $currentnote)
                 .scrollContentBackground(.hidden)
                 .background(.ultraThinMaterial)
-                .frame(height: 550)
+                .frame(width: 420, height: 550)
                 .font(.system(size: 30))
                 //.glassEffect(.regular)
                 //.background(.gray)
@@ -111,48 +134,47 @@ struct ContentView: View {
                 //.glassEffect(.clear)
                 .cornerRadius(30)
                 .padding()
-            Spacer()
+            //Spacer()
             //TEXT BOX
         }
         
         VStack{
             Text("Recents")
-            Spacer()
+                .bold()
+                .font(.title3)
             ZStack{
                 RoundedRectangle(cornerRadius: 15)
                     .fill(.ultraThinMaterial)
-                VStack(spacing: 5){
-                    Button{
-                        currentnote = notes[0]
-                        //testButton to load in eg note[1] or whichever chosen IN CODE not current interchangeable...
-                    } label: {
-                        Text(notes[0])
-                    }
-                    Button{
-                        currentnote = notes[1] 
-                        //testButton to load in eg note[1] or whichever chosen IN CODE not current interchangeable...
-                    } label: {
-                        Text(notes[1])
-                    }
-                    Button{
-                        currentnote = notes[2]
-                        //testButton to load in eg note[2] or whichever chosen IN CODE not current interchangeable...
-                    } label: {
-                        Text(notes[2])
+                ScrollView{
+                    VStack(spacing: 5){
+                        ForEach(notes, id: \.self){ note in
+                            Button{
+                                print("loading note")
+                                currentnote = note
+                            } label: {
+                                Text(note)
+                                    //.padding()
+                                    .lineLimit(1)
+                                    .layoutPriority(1)
+                                    .glassEffect(.clear)
+                                    .font(.title)
+                            }
+                        }
                     }
                 }
-                //Button(notes[2])
+                .frame(width: 400, height: 85)
+                //.background(.red)
             }
-            //Image(.placeholder)
-            //    .resizable()
                 //.scaledToFit()
             
-                .frame(width: 350, height:100)
+                .frame(width: 420, height:100)
             //BOTTOM BAR RECENT NOTES
+                .onAppear{
+                    loadNotes()
+                }
         }
         .preferredColorScheme(darkMode ? .dark : .light)
     }
-
 }
 
 #Preview {

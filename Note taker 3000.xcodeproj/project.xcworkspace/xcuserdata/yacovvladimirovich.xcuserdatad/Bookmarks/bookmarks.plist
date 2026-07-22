@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>81</string>
+					<string>108</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>80</string>
+					<string>107</string>
 					<key>Timestamp</key>
-					<string>806416420.554719</string>
+					<string>806446168.889418</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -37,13 +37,13 @@
 				<string>                        Button{
 </string>
 				<key>leading</key>
-				<string>                                .font(.system(size: 40))
+				<string>                                .font(.system(size: 35))
                         }
 </string>
 				<key>trailing</key>
-				<string>                            //print("Cleared current text AND created a new note")
-                            print(currentnote, " is the current saved note")
-                            notes.append(currentnote)
+				<string>                            notes.append(currentnote)
+                            saveNotes()
+                            currentnote = ""
 </string>
 			</dict>
 			<key>title</key>
@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>72</string>
+					<string>100</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>71</string>
+					<string>99</string>
 					<key>Timestamp</key>
-					<string>806415637.454697</string>
+					<string>806446168.889454</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -88,9 +88,9 @@
                     HStack(spacing: 10){
 </string>
 				<key>trailing</key>
-				<string>                            //print("Placeholder")
-                            print(notes)
-                            currentnote = notes[0]
+				<string>                            print("sharing note")
+                            //ILL MAKE THIS THE SHARING BUTTON
+                        } label: {
 </string>
 			</dict>
 			<key>title</key>
@@ -106,13 +106,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>46</string>
+					<string>75</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>45</string>
+					<string>74</string>
 					<key>Timestamp</key>
-					<string>806415637.454692</string>
+					<string>806445847.446579</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -137,7 +137,7 @@
 				<key>trailing</key>
 				<string>                            print("darkmode state: ", darkMode)
                             darkMode.toggle()
-                            //print(darkMode)
+                            //dark | light mode switcher!!
 </string>
 			</dict>
 			<key>title</key>
@@ -153,13 +153,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>37</string>
+					<string>57</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>36</string>
+					<string>56</string>
 					<key>Timestamp</key>
-					<string>806415637.454641</string>
+					<string>806445266.121979</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -183,8 +183,8 @@
 </string>
 				<key>trailing</key>
 				<string>                            print("Deleted the current note")
-                            currentnote = ""
-                                  // along with deleting current "note" and text in it, also show a text label as saying "no notes currently selected" and have it always be visible unless the TextEditor is overlaying it
+                            
+                            if let index = notes.firstIndex(of: currentnote) {
 </string>
 			</dict>
 			<key>title</key>
@@ -200,13 +200,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>103</string>
+					<string>126</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>102</string>
+					<string>125</string>
 					<key>Timestamp</key>
-					<string>806416420.554781</string>
+					<string>806446168.889462</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -231,7 +231,7 @@
 				<key>trailing</key>
 				<string>                .scrollContentBackground(.hidden)
                 .background(.ultraThinMaterial)
-                .frame(height: 550)
+                .frame(width: 420, height: 550)
 </string>
 			</dict>
 			<key>title</key>
